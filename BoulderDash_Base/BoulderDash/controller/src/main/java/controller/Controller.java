@@ -1,19 +1,27 @@
 package controller;
 
-public class Controller {
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-	public void KeyPressed()
-	{
+public class Controller implements KeyListener{
+
+
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	public void Keyreleased()
-	{
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	public void Typed() 
-	{
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 	
