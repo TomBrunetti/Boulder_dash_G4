@@ -5,13 +5,13 @@ import java.awt.event.KeyListener;
 
 public class Controller implements KeyListener{
 
-public boolean toucheZ = false;
-public boolean toucheQ = false; 
-public boolean toucheS = false; 
-public boolean toucheD = false; 
-public boolean toucheW = false; 
-public boolean toucheX = false; 
-public boolean toucheEscape = false;
+public boolean ZKey = false;
+public boolean QKey = false; 
+public boolean SKey = false; 
+public boolean DKey = false; 
+public boolean WKey = false; 
+public boolean XKey = false; 
+public boolean EscapeKey = false;
 
 	@Override
 	public void keyPressed(KeyEvent e) {
