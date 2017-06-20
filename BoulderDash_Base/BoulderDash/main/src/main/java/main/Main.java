@@ -3,6 +3,7 @@ package main;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
+import model.Map;
 import model.ModelFacade;
 import view.ViewFacade;
 
@@ -28,6 +29,8 @@ public abstract class Main {
         } catch (final SQLException exception) {
             exception.printStackTrace();
         }
+        Map map = new Map();
+        map.loadMap();
     }
 
 }
