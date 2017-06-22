@@ -5,6 +5,7 @@ import view.Window;
 
 public class GameLoop {
 
+
 	static AddEntity AE = new AddEntity();
 	
 	public static void createGame(){}

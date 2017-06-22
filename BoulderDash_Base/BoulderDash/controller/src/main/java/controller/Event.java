@@ -24,5 +24,9 @@ public class Event extends Controller {
 		if(EscapeKey == true){
 			System.exit(0);
 		}
+	// Reset
+		if(WKey == true && XKey == true){
+			Reset();
+				} 
 	}
 }
