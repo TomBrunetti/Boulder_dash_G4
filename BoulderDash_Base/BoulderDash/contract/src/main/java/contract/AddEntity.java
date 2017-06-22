@@ -1,0 +1,23 @@
+package contract;
+
+import java.util.ArrayList;
+
+import model.*;
+
+public class AddEntity {
+
+	ArrayList<Entity> entities = new ArrayList<Entity>();
+
+	
+	public void addEntity(Entity e)
+	{
+		entities.add(e);
+	}
+
+
+	public ArrayList<Entity> getEntity() {
+		return entities;
+	}
+
+
+}

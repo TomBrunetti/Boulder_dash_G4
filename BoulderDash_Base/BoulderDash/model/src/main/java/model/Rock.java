@@ -1,36 +1,36 @@
 package model;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
 
-public class Rock extends Stone{
+import javax.swing.ImageIcon;
 
-	Image imgRock;
-	private int Rx;
-	private int Ry;
-	public Rock(int sx, int sy) {
-		super(sx, sy);
-		Rx=sx;
-		Ry=sy;
+public class Rock extends Entity{
+
+	
+	public Rock(int x, int y) {
+		super(x, y);
+	}
+
+	public void update()
+	{
 		
 	}
+	
+	public void draw(Graphics2D g2d)
+	{
+		g2d.drawImage(getRockImg(), x, y, null);
+	}
+	
+	public Image getRockImg()
+	{
+		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Rocher/Rocher.png");
+		return ic.getImage();	
+	}
+
 
 	public void collision(){
 		
 	}
-	
-	public int getPosX(){
-		return Rx;
-	}
-	public int getPosY(){
-		return Ry;
-	}
-	
-	public void setPosX(int x){
-		Rx=x;
-	}
-	public void setPosY(int y){
-		Ry=y;
-	}
-	
 	
 }

@@ -1,14 +1,30 @@
 package model;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
 
-public class PuffPuff extends Monster{
-	
-	Image imgPuffPuff;
+import javax.swing.ImageIcon;
+
+public class PuffPuff extends Entity{
 	
 	public PuffPuff(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+	}
+
+	public void update()
+	{
+		
+	}
+	
+	public void draw(Graphics2D g2d)
+	{
+		g2d.drawImage(getPuffPuffImg(), x, y, null);
+	}
+	
+	public Image getPuffPuffImg()
+	{
+		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Monstres/Papillon.png");
+		return ic.getImage();	
 	}
 
 	public void unleashDiamonds(){
