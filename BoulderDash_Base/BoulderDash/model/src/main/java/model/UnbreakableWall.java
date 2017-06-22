@@ -7,8 +7,6 @@ import javax.swing.ImageIcon;
 
 
 public class UnbreakableWall extends Entity{
-
-	Image imgUnWall;
 	
 	public UnbreakableWall(int x, int y) {
 		super(x, y);

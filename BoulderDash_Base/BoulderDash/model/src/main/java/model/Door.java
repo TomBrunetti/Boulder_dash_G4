@@ -1,14 +1,32 @@
 package model;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
 
-public class Door extends Walls{
+import javax.swing.ImageIcon;
 
-	Image imgDoor;
+public class Door extends Entity{
 	
-	public Door() {
-		// TODO Auto-generated constructor stub
+	public Door(int x, int y) {
+		super(x, y);
 	}
+
+	public void update()
+	{
+		
+	}
+	
+	public void draw(Graphics2D g2d)
+	{
+		g2d.drawImage(getDoorImg(), x, y, null);
+	}
+	
+	public Image getDoorImg()
+	{
+		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Porte/Porte.png");
+		return ic.getImage();	
+	}
+
 	
 	public void checkWin(){
 		

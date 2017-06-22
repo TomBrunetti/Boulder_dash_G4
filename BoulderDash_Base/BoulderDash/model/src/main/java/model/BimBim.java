@@ -1,14 +1,31 @@
 package model;
 
+import java.awt.Graphics2D;
 import java.awt.Image;
 
-public class BimBim extends Monster{
-	
-	Image imgBimBim;
+import javax.swing.ImageIcon;
+
+public class BimBim extends Entity{
 	
 	public BimBim(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
 	}
+
+	public void update()
+	{
+		
+	}
+	
+	public void draw(Graphics2D g2d)
+	{
+		g2d.drawImage(getBimBimImg(), x, y, null);
+	}
+	
+	public Image getBimBimImg()
+	{
+		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Monstres/Pouple.png");
+		return ic.getImage();	
+	}
+
 
 }
