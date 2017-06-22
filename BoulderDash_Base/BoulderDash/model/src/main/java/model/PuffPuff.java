@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class PuffPuff extends Monster{
+public class PuffPuff extends Entity{
 	
 	Image imgPuffPuff;
 	

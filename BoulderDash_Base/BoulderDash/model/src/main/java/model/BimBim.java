@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class BimBim extends Monster{
+public class BimBim extends Entity{
 	
 	Image imgBimBim;
 	

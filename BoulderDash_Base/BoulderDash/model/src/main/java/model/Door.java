@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class Door extends Walls{
+public class Door extends Entity{
 
 	Image imgDoor;
 	

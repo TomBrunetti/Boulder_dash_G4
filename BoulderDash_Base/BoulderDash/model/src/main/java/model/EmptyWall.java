@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class EmptyWall {
+public class EmptyWall extends Entity {
 
 	Image imgEmptyWall;
 	
