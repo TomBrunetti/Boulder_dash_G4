@@ -1,6 +1,6 @@
 package contract;
 
-import model.Player;
+import model.*;
 import view.Window;
 
 public class GameLoop {
@@ -17,9 +17,13 @@ public class GameLoop {
 	public static void initializeMap(int level)
 	{
     	Window Win = new Window();
-    	AE.addEntity(new Player(200,200));
-    	AE.addEntity(new Player(100,100));
-    	AE.addEntity(new Player(50,50));
-    	Win.Window(AE.getEntity()); 
+    	for (int i=0; i<240; i+=16)
+    	{
+    		for(int y=0; i<240; y+=16)
+    		{
+    		AE.addEntity(new EmptyWall(y,i));
+    		}
+    	}
+
 	}
 }

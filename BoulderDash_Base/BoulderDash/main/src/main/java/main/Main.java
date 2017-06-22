@@ -4,7 +4,7 @@ package main;
 import contract.GameLoop;
 
 
-public abstract class Main2 {
+public abstract class Main {
 
 	private int level;
 	

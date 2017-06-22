@@ -15,7 +15,7 @@ public class Window extends JFrame {
 	{
 		JFrame win = new JFrame();
 	    win.setTitle("BoulderDash 2.0");
-	    win.setSize(656, 656);
+	    win.setSize(240, 240);
 	    win.setResizable(false);
 	    win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    win.setLocationRelativeTo(null);
