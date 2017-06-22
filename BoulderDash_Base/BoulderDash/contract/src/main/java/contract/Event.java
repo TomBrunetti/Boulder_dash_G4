@@ -1,24 +1,33 @@
 package contract;
-import java.awt.event.KeyListener;
 import javax.swing.JFrame;
-import java.awt.event.KeyEvent;
+import controller.Controller;
 
-
-public class Event {{
+public class Event extends Controller {
+		public void movement(){
 	// Up
-		if(Zkey == true){
+		if(ZKey == true){
 			pan.setPosY(pan.getPosY()-16);
 	}
-	// Left
-		if(Qkey == true){
+	// Left 
+		if(QKey == true){
 			pan.setPosX(pan.getPosX()-16);
 		}
 	// Down
-		if(Skey == true){
+		if(SKey == true){
 			pan.setPosY(pan.getPosY()+16);
 		}
 	// Right
 		if(DKey == true){
 			pan.setPosX(pan.getPosX()+16);
 		}
-}}
+		
+	// Exit
+		if(EscapeKey == true){
+			System.exit(0);
+		}
+	// Reset
+		if(WKey == true && XKey == true){
+			Reset();
+				} 
+	}
+}

@@ -17,25 +17,25 @@ public boolean EscapeKey = false;
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_Z){
-			ZKey=true;
+			toucheZ=true;
 	}
 		if(e.getKeyCode() == KeyEvent.VK_Q){
-			QKey=true;
+			toucheQ=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_S){
-			SKey=true;
+			toucheS=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
-			DKey=true;
+			toucheD=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_W){
-			WKey=true;
+			toucheW=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_X){
-			XKey=true;
+			toucheX=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-			EscapeKey=true;
+			toucheEscape=true;
 		}
 		}
 
@@ -43,25 +43,25 @@ public boolean EscapeKey = false;
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_Z){
-			ZKey=false;
+			toucheZ=false;
 	}
 		if(e.getKeyCode() == KeyEvent.VK_Q){
-			QKey=false;
+			toucheQ=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_S){
-			SKey=false;
+			toucheS=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
-			DKey=false;
+			toucheD=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_W){
-			WKey=false;
+			toucheW=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_X){
-			XKey=false;
+			toucheX=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-			EscapeKey=false;
+			toucheEscape=false;
 	}
 		}
 
