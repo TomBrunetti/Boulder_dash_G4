@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Image;
 
-public class HardWall extends Walls{
+public class HardWall extends Entity{
 
 	Image imgHardWall;
 	

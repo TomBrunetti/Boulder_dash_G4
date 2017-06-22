@@ -1,13 +1,17 @@
 package view;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import model.Entity;
 
 
 
 public class Window extends JFrame {
 	
-	WindowElements WE = new WindowElements();
-
-	public void fillWindow()
+	public void Window(ArrayList<Entity> entities)
 	{
 		JFrame win = new JFrame();
 	    win.setTitle("BoulderDash 2.0");
@@ -15,9 +19,10 @@ public class Window extends JFrame {
 	    win.setResizable(false);
 	    win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    win.setLocationRelativeTo(null);
-	    win.setContentPane(WE);
+	    win.add(new WindowElements(entities));
 	    win.setVisible(true);
 	}
+
 
 
 

@@ -1,15 +1,19 @@
 package main;
 
-import view.Window;
+
+import contract.GameLoop;
+
 
 public abstract class Main2 {
 
 	private int level;
 	
+	
     public static void main(final String[] args) {
-    	Window Win = new Window();
-    	Win.fillWindow();
+ 	GameLoop GL = new GameLoop();
+ 	GL.initializeMap(1);
     }
+
 
 	public int getLevel() {
 		return level;
