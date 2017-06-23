@@ -1,33 +1,50 @@
-package contract;
-import javax.swing.JFrame;
-import controller.Controller;
+package controller;
+import java.util.Observable;
+import model.DetectionTouches;
 
-public class Event extends Controller {
-		public void movement(){
-	// Up
-		if(ZKey == true){
-			pan.setPosY(pan.getPosY()-16);
+public class Event extends Observable {
+		
+	public Event(){
+
 	}
-	// Left 
+	
+	private boolean ZKey;
+	private boolean QKey;
+	private boolean SKey;
+	private boolean DKey;
+	private boolean EscapeKey;
+	private boolean WKey;
+	private boolean XKey;
+	
+	public void movement(){
+	// Up
+		System.out.println("mvm");
+		if(ZKey == true){
+			System.out.println("Z");
+			
+		}
+	// Left
 		if(QKey == true){
-			pan.setPosX(pan.getPosX()-16);
+			
 		}
 	// Down
 		if(SKey == true){
-			pan.setPosY(pan.getPosY()+16);
+			
 		}
 	// Right
 		if(DKey == true){
-			pan.setPosX(pan.getPosX()+16);
+			
 		}
-		
-	// Exit
 		if(EscapeKey == true){
 			System.exit(0);
 		}
-	// Reset
+		
 		if(WKey == true && XKey == true){
-			Reset();
-				} 
+			//reset();
+		}
+		
+		
 	}
+
+
 }
