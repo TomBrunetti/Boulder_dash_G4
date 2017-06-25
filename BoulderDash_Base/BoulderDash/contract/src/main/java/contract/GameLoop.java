@@ -8,34 +8,57 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.TimeUnit;
 
 
-public class GameLoop implements Observer {
+public class GameLoop {// main loop of the game
 	
-	char[][] c_map;
-	char[][] v_map;
+	private char[][] c_map; //complete map
+	private char[][] v_map; //map seen by the player
+	Window Win = new Window();
+	private Event ev = new Event();
+	int l;
+	private static int DC = 0;
 	
 	public GameLoop(){
 	}
 	
 	static AddEntity AE = new AddEntity();
 	
-	public void createGame(){
-		this.initializeMap(1);
-		
-		Event ev = new Event();
+	public void createGame(){ //creation and execution of the game
+		this.initializeMap(2);
 		
 		
-		CharacterView cv = new CharacterView(c_map);
+		
+
 		
 		
-		Window Win = new Window();
 		Win.Window(AE.getEntity());
 		
+		while (true){ //the loop
+			if(ev.getGameLost()){//if the game is lost, the GO screen appears!
+				System.out.println("LOST");
+				AE.addEntity(new LostScreen(0,0));
+				Win.getWe().repaint();
+				break;
+			}
+			if(DC>=5 && ev.getDoorReach()){//if the game is won, the GG screen appears!
+				System.out.println("WIN");
+				AE.addEntity(new WinScreen(0,0));
+				Win.getWe().repaint();
+				break;
+			}
+			this.update();
+			
+			try {
+				TimeUnit.MILLISECONDS.sleep(10);//a timer to slow down the loop
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
-		ev.movement();
-		v_map=cv.getCView();
-		this.testMap();
+
 	
 	}
 	
@@ -45,10 +68,12 @@ public class GameLoop implements Observer {
 	
 	public void initializeMap(int level){
 		Mapping map = new Mapping();
-		c_map=map.loadMap(level);
+		c_map=map.loadMap(level); // loading a new map
 		
 	}
-	public void testMap(){
+	public void testMap(){ // for all character in the map, we assign an entity
+		AE.clear();
+		
 		for(int i=0; i<15; i++){
 			for(int j=0; j<15; j++){
 				if(v_map[i][j]=='x'){
@@ -87,11 +112,22 @@ public class GameLoop implements Observer {
 				
 			}
 		}
+		AE.addEntity(new Diamondcompteur(DC,0,16));
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
+	public void update(){
+		l=Win.getkey(); //we get the keystroke
+		CharacterView cv = new CharacterView(c_map);
+		v_map=cv.getCView(); //we get the player's view, depending on the players Pos.
+		this.testMap(); //
+		c_map = ev.movement(l, c_map);//movement depending on the keystrokes
+		if (ev.getGotDiamond()){//if you catch a diamond, it appears in the count.
+			DC++;
+		}
+		
+
+		Win.getWe().repaint();// repaint everything to it's new pos ^^
+
 		
 	}
 

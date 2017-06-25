@@ -1,5 +1,5 @@
 package model;
-
+/*
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
@@ -54,5 +54,7 @@ public class ExampleTest {
         final String expected = "1 : Example test";
         assertEquals(expected, this.example.toString());
     }
+	
 
 }
+*/

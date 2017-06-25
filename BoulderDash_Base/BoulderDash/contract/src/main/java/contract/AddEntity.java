@@ -19,5 +19,9 @@ public class AddEntity {
 		return entities;
 	}
 
-
+	public ArrayList<Entity> clear(){
+		entities.clear();
+		return entities;
+	}
+	
 }
