@@ -23,7 +23,7 @@ public class PuffPuff extends Entity{
 	
 	public Image getPuffPuffImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Monstres/Papillon.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Monstres/Papillon.png");
 		return ic.getImage();	
 	}
 

@@ -25,7 +25,7 @@ public class EmptyWall extends Entity {
 	
 	public Image getEWImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Mur/Mur cassé.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Mur/Mur_cassé.png");
 		return ic.getImage();	
 	}
 

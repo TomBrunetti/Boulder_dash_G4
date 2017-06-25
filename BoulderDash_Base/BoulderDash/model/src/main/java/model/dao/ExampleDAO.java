@@ -14,22 +14,22 @@ import model.Example;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public abstract class ExampleDAO extends AbstractDAO {
+public class ExampleDAO extends AbstractDAO {
 
     /** The sql example by id. */
-    private static String sqlExampleById   = "{call findMapById(?)}";
+    private String sqlExampleById   = "{call findMapById(?)}";
 
     /** The sql example by name. */
-    private static String sqlExampleByName = "{call findExampleByName(?)}";
+    private String sqlExampleByName = "{call findExampleByName(?)}";
 
     /** The sql all examples. */
-    private static String sqlAllExamples   = "{call findAllExamples()}";
+    private String sqlAllExamples   = "{call findAllExamples()}";
 
     /** The id column index. */
-    private static int    idColumnIndex    = 1;
+    private int    idColumnIndex    = 1;
 
     /** The name column index. */
-    private static int    nameColumnIndex  = 2;
+    private int    nameColumnIndex  = 2;
 
     /**
      * Gets the example by id.
@@ -40,7 +40,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static Example getExampleById(final int id) throws SQLException {
+    public Example getExampleById(final int id) throws SQLException {
         final CallableStatement callStatement = prepareCall(sqlExampleById);
         Example example = null;
         callStatement.setInt(1, id);
@@ -63,7 +63,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static Example getExampleByName(final String name) throws SQLException {
+    public Example getExampleByName(final String name) throws SQLException {
         final CallableStatement callStatement = prepareCall(sqlExampleByName);
         Example example = null;
 
@@ -85,7 +85,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static List<Example> getAllExamples() throws SQLException {
+    public List<Example> getAllExamples() throws SQLException {
         final ArrayList<Example> examples = new ArrayList<Example>();
         final CallableStatement callStatement = prepareCall(sqlAllExamples);
         if (callStatement.execute()) {

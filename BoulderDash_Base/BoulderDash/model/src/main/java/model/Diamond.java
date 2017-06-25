@@ -23,7 +23,7 @@ public class Diamond extends Entity{
 	
 	public Image getDiamondImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Diamand/Diamand.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Diamand/Diamand.png");
 		return ic.getImage();	
 	}
 }

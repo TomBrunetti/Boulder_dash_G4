@@ -24,7 +24,7 @@ public class UnbreakableWall extends Entity{
 	
 	public Image getUWImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Mur/mur incassable.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Mur/mur_incassable.png");
 		return ic.getImage();	
 	}
 	

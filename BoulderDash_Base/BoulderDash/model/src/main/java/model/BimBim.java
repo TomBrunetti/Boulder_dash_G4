@@ -23,7 +23,7 @@ public class BimBim extends Entity{
 	
 	public Image getBimBimImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Monstres/Pouple.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Monstres/Pouple.png");
 		return ic.getImage();	
 	}
 

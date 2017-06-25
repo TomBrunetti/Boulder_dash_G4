@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class Player extends Entity{
 
-	int NbDiamTaken;
+	int NbDiamTaken=0;
 
 	
 	public Player(int x, int y) {
@@ -27,7 +27,7 @@ public class Player extends Entity{
 	
 	public Image getPlayerImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/Antoine/git/Boulder_dash_G4/Image jeu/Personnage/Face/Face 1.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Personnage/Face/Face 1.png");
 		return ic.getImage();	
 	}
 	

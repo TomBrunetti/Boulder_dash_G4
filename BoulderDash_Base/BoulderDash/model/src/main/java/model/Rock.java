@@ -24,7 +24,7 @@ public class Rock extends Entity{
 	
 	public Image getRockImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Rocher/Rocher.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Rocher/Rocher.png");
 		return ic.getImage();	
 	}
 

@@ -23,7 +23,7 @@ public class Door extends Entity{
 	
 	public Image getDoorImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Porte/Porte.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Porte/Porte.png");
 		return ic.getImage();	
 	}
 

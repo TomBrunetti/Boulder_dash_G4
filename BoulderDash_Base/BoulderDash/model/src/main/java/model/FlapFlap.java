@@ -23,7 +23,7 @@ public class FlapFlap extends Entity {
 	
 	public Image getFlapFlapImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Monstres/Chauve-souris.png");
+		ImageIcon ic = new ImageIcon("Image_jeu/Monstres/Chauve-souris.png");
 		return ic.getImage();	
 	}
 

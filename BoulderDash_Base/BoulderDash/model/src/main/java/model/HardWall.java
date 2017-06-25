@@ -2,6 +2,7 @@ package model;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 
@@ -23,7 +24,9 @@ public class HardWall extends Entity{
 	
 	public Image getHWImg()
 	{
-		ImageIcon ic = new ImageIcon("C:/Users/titou/git/Boulder_dash_G4/Image jeu/Mur/Terre non cassé.png");
+		File file = new File("Image_jeu/Mur/Terre_non_cassé.png");
+		String path=file.getAbsolutePath();
+		ImageIcon ic = new ImageIcon(path);
 		return ic.getImage();	
 	}
 	
