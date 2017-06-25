@@ -5,7 +5,6 @@ import java.util.List;
 
 import model.Example;
 import model.IModel;
-import view.IView;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>

@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Observable;
 
 public class Controller implements KeyListener{
 
@@ -13,29 +14,34 @@ public boolean WKey = false;
 public boolean XKey = false; 
 public boolean EscapeKey = false;
 
+	public Controller(){
+		
+	}
+
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_Z){
-			toucheZ=true;
-	}
+			ZKey=true;
+			System.out.println("z");
+		}
 		if(e.getKeyCode() == KeyEvent.VK_Q){
-			toucheQ=true;
+			QKey=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_S){
-			toucheS=true;
+			SKey=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
-			toucheD=true;
+			DKey=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_W){
-			toucheW=true;
+			WKey=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_X){
-			toucheX=true;
+			XKey=true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-			toucheEscape=true;
+			EscapeKey=true;
 		}
 		}
 
@@ -43,30 +49,27 @@ public boolean EscapeKey = false;
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_Z){
-			toucheZ=false;
-	}
+			ZKey=false;
+		}
 		if(e.getKeyCode() == KeyEvent.VK_Q){
-			toucheQ=false;
+			QKey=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_S){
-			toucheS=false;
+			SKey=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_D){
-			toucheD=false;
+			DKey=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_W){
-			toucheW=false;
+			WKey=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_X){
-			toucheX=false;
+			XKey=false;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-			toucheEscape=false;
-	}
+			EscapeKey=false;
 		}
-
-		
-	
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
