@@ -1,25 +1,17 @@
 package main;
 
+import java.sql.SQLException;
 
 import contract.GameLoop;
 
 
+
 public abstract class Main {
 
-	private int level;
-	
 	
     public static void main(final String[] args) {
  	GameLoop GL = new GameLoop();
- 	GL.initializeMap(1);
+ 	GL.createGame();
     }
 
-
-	public int getLevel() {
-		return level;
-	}
-
-	public void setLevel(int level) {
-		this.level = level;
-	}
 }

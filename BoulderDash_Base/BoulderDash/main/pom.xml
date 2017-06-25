@@ -13,21 +13,6 @@
       <artifactId>contract</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    <dependency>
-      <groupId>fr.exia</groupId>
-      <artifactId>controller</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>fr.exia</groupId>
-      <artifactId>view</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>fr.exia</groupId>
-      <artifactId>model</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -47,10 +32,18 @@
                   <mainClass>main.Main</mainClass>
                 </transformer>
               </transformers>
+              <plugin>
+			     <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-javadoc-plugin</artifactId>
+			     <version>2.7</version>
+			    </plugin>
             </configuration>
           </execution>
         </executions>
       </plugin>
+      
     </plugins>
+    
   </build>
+
 </project>
