@@ -1,0 +1,126 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Client :  127.0.0.1
+-- Généré le :  Lun 26 Juin 2017 à 11:11
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `boulderdash`
+--
+CREATE DATABASE IF NOT EXISTS `boulderdash` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `boulderdash`;
+
+DELIMITER $$
+--
+-- Procédures
+--
+DROP PROCEDURE IF EXISTS `findAllExamples`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findAllExamples` ()  NO SQL
+SELECT id, name
+FROM example$$
+
+DROP PROCEDURE IF EXISTS `findExampleByName`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findExampleByName` (IN `name` VARCHAR(255))  NO SQL
+SELECT id, name
+FROM example
+WHERE example.name = name$$
+
+DROP PROCEDURE IF EXISTS `findMapById`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `findMapById` (IN `id` INT)  NO SQL
+SELECT id_map, map_placements
+FROM map
+WHERE map.id_map = id$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `example`
+--
+
+DROP TABLE IF EXISTS `example`;
+CREATE TABLE IF NOT EXISTS `example` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Vider la table avant d'insérer `example`
+--
+
+TRUNCATE TABLE `example`;
+--
+-- Contenu de la table `example`
+--
+
+INSERT INTO `example` (`id`, `name`) VALUES
+(1, 'Example 1'),
+(2, 'Example 2'),
+(3, 'Example 3'),
+(4, 'Exmaple 4');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `map`
+--
+
+DROP TABLE IF EXISTS `map`;
+CREATE TABLE IF NOT EXISTS `map` (
+  `id_map` int(11) NOT NULL,
+  `name_map` varchar(11) NOT NULL,
+  `map_placements` text NOT NULL,
+  PRIMARY KEY (`id_map`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Vider la table avant d'insérer `map`
+--
+
+TRUNCATE TABLE `map`;
+--
+-- Contenu de la table `map`
+--
+
+INSERT INTO `map` (`id_map`, `name_map`, `map_placements`) VALUES
+(1, 'level1', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxmxxxxxrrxxxxrrrdxxxxxxxmxxxxxxxxxxxxxxxxmpyyyyyyyyyyyxxxxxxxxxxmxxxxxxxxxxxxxxxxmdxxxmmxrrxxxyxxxmmxxxxmxxxxxxxxxxxxxxxxmxxxxmmxxrxydyxxxmmxxxxmxxxxxxxxxxxxxxxxmxxxxxxxxxxyxxdxxxxxxxxmxxxxxxxxxxxxxxxxmxxxxxxxxxxyxxxxxxrrrxxmxxxxxxxxxxxxxxxxmmmxxxxxxxxdxxxxrxxxxmmmxxxxxxxxxxxxxxxxmmmrxxxxxxdxxxxyyyrxxmmmxxxxxxxxxxxxxxxxmxxxxxdxxxxxxxrxxxxdxxxmxxxxxxxxxxxxxxxxmrrxmmmmmmmmmmmmmmmmxxxmxxxxxxxxxxxxxxxxmxxxxxxxxdxxxxyyxxxdxxrmxxxxxxxxxxxxxxxxmxxxxxxxrrrdxxxxxxxxxdxmxxxxxxxxxxxxxxxxmxxxxxxxxxxxxxxxxxxxxxemxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
+(2, 'level2', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxmprdmdxxxxxxxxxxxxxxxxdmxxxxxxxxxxxxxxxxmxyxmxxxxxxxxyyyxxxxxxrmxxxxxxxxxxxxxxxxmxyxmxxxxxmrxxxxxxxxxrxmxxxxxxxxxxxxxxxxmxyxmxxxdxmmxxxxxxxxxxxmxxxxxxxxxxxxxxxxmxmxmryxxxmxxxxxxxxxxxxmxxxxxxxxxxxxxxxxmxxxmxyxxxmdxxxyrrxxxxxmxxxxxxxxxxxxxxxxmxyxyxmmxdmxxxxxyddxxxxmxxxxxxxxxxxxxxxxmmmmmmmmmmmxxdxxyxrxxxxmxxxxxxxxxxxxxxxxmdxxxxxxxxxxxxxxyxrxxxrmxxxxxxxxxxxxxxxxmxxxxxxxxxxxxyyyyyyxxxxmxxxxxxxxxxxxxxxxmxrrfyydyxxxxxxxxxxxrxxmxxxxxxxxxxxxxxxxmexxxxxxxxxxxxxxxrrrxmxmxxxxxxxxxxxxxxxxmxxxdxxxxxxdxxxxxxxxdmdmxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
+(3, 'level3', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxmpxxxxxxxxxxxxxxyyyxdxmdrxxxxxxxemxxxxxxmxxxxxfyyyxxxxxxyybxxxmxxxfyyyyyymxxxxxxmxxxxrdxxxxxxxxxxxxxxxmxxxxxxxxxxmxxxxxxmxxxxxxxxxxxxxxxxxxxxxmxxxxxxrrrxmxxxxxxmxxxxxxxxxxxxxxxxxxxxxmxxdxxxxxxxmxxxxxxmxxxxxxxxxxxyyyyxxxxxxmxxxxxxxxxxmxxxxxxmxxxxxxxxxxxxxxxxxxxxxmmmmmmxxxxxmxxxxxxmxxbxxxxxxxxxxxxxxxxxxmxxxdrxxxxxmxxxxxxmxxyxxxxxxxxxxrrrxxxxxmxxxxxxxxxxmxxxxxxmdxyxxxxxxxxxxxxxxxxxxmxrrxxxxxyxmxxxxxxmxmmmmmmmmmmmmmmmmmmmxmdxxxxxxxxxmxxxxxxmdxxxxxxxxxxxxxxxxxxxxmxxxxxxxxxxmxxxxxxmrrryyyyyyyyyyyyyyybydmxxxxxxrrxxmxxxxxxmdxxxxxxxxxxxxxxxxxxxxmxxxxxxxxxxmxxxxxxmxxxxxxfyyyyxxxxxxxxxxmxxxxxxxxxdmxxxxxxmxxxxxxyydyyxxxxxxxxxxmxxxxrxxxxxmxxxxxxmxxxxxxyyyyyxxxxrxxxxxmxxxxrxxxxxmxxxxxxmxyxxxxxxxxxxxxyyyrxxxmxxxxrxxxxxmxxxxxxmxxxxxxxxxxxxxxxxxxxrmmxxxxrxxxxxmxxxxxxmxxxrxxxxxxxxxxxxxxxxdxxxxrrrrrxmmxxxxxxmmxxxxxxxxxxxxxxxxxxymmxxxxxxdxxxmxxxxxxmxxrrrxxxxxxxrxxxxxxyxmmmmmmmmmmmmxxxxxxmxxrxxxxxxxxxxxxxxxxymmxxxxxdxxxrmxxxxxxmdxxxxxxxxxxxxxxxxxxyyyybxxxxxxdxmxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
+(4, 'level4', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxmprxxxxxxxxxxxxxyxxxxxxxrdxxxxxxxmxxxxxxmdxxxxxxxxxxxxxxyxxxxxxxyyyyrrxxxmxxxxxxmrxxxxxxxxxxxxxmymxxxxxxxxxxxxxxxmxxxxxxmxxxxxxxxxxxdxxmymxxxxxxxxxxdxxxxmxxxxxxmmmmmmmmmmmmmmmmymmmmmmmmmmmmmmmmmxxxxxxmxxrrrxxxxxxxxxmymxxxdxxxxxxxxxxxmxxxxxxmxxdxxxxxxxxxxxmymxxxxxxxxxxxxxdxmxxxxxxmxxxxxxxxxxxxxxxyxxxxxxyyyyyxxxxxmxxxxxxmxxxxdxxxxxxxxxxyxxxxxxyyyyfxxxxxmxxxxxxmxxxxxrrxxxxxxxmymxxxxxxxxxxdxxxxmxxxxxxmxxxxxxxxxxxxxxmymxxxxxxxxxxxxxxxmxxxxxxmmmmmmmmmmmmmmmmymmmmmmmmmmmmmmmmmxxxxxxmxxxdxxxxxxxxxxmymxxxxrxxxxxxxxdxmxxxxxxmxxxxxxxxxxxxxxmymxxxxyyxxxxxxxxxmxxxxxxmxxxxxxxxxxxxxxxyxxxxxxxxxxxxrxxxmxxxxxxmxxxxybyyyxxxxxxyxxxxxxxxxxxxyyxxmxxxxxxmxxxxxxxxxxxxxxxyxxxxxrrxxxxxxxxxmxxxxxxmxxxdxxxxxxxxxxmymxxxxxxxxxxxxxxxmxxxxxxmxxxxxxxxxxxxxxmymdxxxxxxxdxxxxxxmxxxxxxmmmmmmmmmmmmmmmmymmmmmmmmmmmmmmmmmxxxxxxmmxxxxxxxxxxxmemymdddddddddddddddmxxxxxxmxxxxxxyyyyyyyymymdddddddddddddddmxxxxxxmxrrxxxymmmmmmmmymdddddddddddddddmxxxxxxmxxdxxxyyyyyyyyyymdddddddddddddddmxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
+(5, 'level5', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxmpxxxxxxxxxxxxxmdxxxxxxxxxxxxxxxxmxxxxxxmxxxxxxxxxxmmxxxxxxyyyyyfxxxxxxxxmxxxxxxmxxxxxrxxxxxxxxxxxxxxxxxxxxxxxrrrmxxxxxxmxxxxxxxxxxxxxxxxxxxxxxxxxxyyydyymxxxxxxmxxxxyyxxxxxxxxxxxxxxxxxxxxxxxxxxmxxxxxxmxxxxxxxxxxxxxxxrrxxxxxxxxxxxxxxxmxxxxxxmxxxxxxxxxxxxxxxyyxxxxxxxxxxxxxxxmxxxxxxmxxxyyyybyyyyxxxxxxxxxxxxxxxxxxxxmxxxxxxmxxxyxxxxxxxyxxxmxxxxxxxxxxxxxxxxmxxxxxxmxxxyyyyyyyyyxxxmxxxxxxxxxxxrrxxxmxxxxxxmrxrxxxxxxxxxxxxmxxxxxxxxxxxyxxxxmxxxxxxmxrxxxxxxxxxxxxxxxxxxxxxxxxxyxxxxmxxxxxxmxrxxxxxxxrmmmmmmmmmmmmrxxxxxxxxxmxxxxxxmdxxxxxxxxxxxxxmddmxxxxxxxxxxxxxxmxxxxxxmmmmmmmmmmmxxxxxxxxxxxxmmmmmmmmmmmxxxxxxmyyyyyyyybmxxxrrrxxxxxxmbyyyyyyyymxxxxxxmyxdxxxdxymxxxxxxxxxxxxmyxdxxxdxymxxxxxxmyyyyyyyyyxxxxxxxxxxxxxxyyyyyyyyymxxxxxxmxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxmxxxxxyyyyydyyybxxxxxxxxxxxxyyydumxxxxxxmxxxxxxxxxxxxxxxxxyyyyyxxxxxyxxxxmxxxxxxmrxxxxxxxxxxxxxxxxyxdxyxxxxxyxxxemxxxxxxmxrxxxxxxxxxxxxxxxyyyyyxxxxxyxxxxmxxxxxxmdxxxxyyyyydyyybxxxxxxxxxxxxyyydymxxxxxxmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `sprite`
+--
+
+DROP TABLE IF EXISTS `sprite`;
+CREATE TABLE IF NOT EXISTS `sprite` (
+  `id_sprite` int(11) NOT NULL,
+  `name_sprite` varchar(11) NOT NULL,
+  PRIMARY KEY (`id_sprite`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Vider la table avant d'insérer `sprite`
+--
+
+TRUNCATE TABLE `sprite`;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
